@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  NewsDetailsViewController.swift
 //  Clean-MVP-News
 //
 //  Created by Noor Walid on 13/04/2023.
@@ -7,14 +7,18 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+protocol NewsDetailsViewControllerProtocol: AnyObject {
+    
+}
+
+class NewsDetailsViewController: UIViewController, NewsDetailsViewControllerProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
 
     /*
     // MARK: - Navigation

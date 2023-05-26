@@ -14,6 +14,11 @@
 		7C153AB82A20E0AC00F00F42 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C153AB72A20E0AC00F00F42 /* Endpoint.swift */; };
 		7C153ABD2A20E55400F00F42 /* BBCNewsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C153ABC2A20E55400F00F42 /* BBCNewsEndpoint.swift */; };
 		7C153ABF2A20E68800F00F42 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C153ABE2A20E68800F00F42 /* NetworkService.swift */; };
+		7C153ACB2A20E7F400F00F42 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C153ACA2A20E7F400F00F42 /* NavigationRouter.swift */; };
+		7C153ACD2A20E7FA00F00F42 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C153ACC2A20E7FA00F00F42 /* RouterProtocol.swift */; };
+		7C153ACF2A20E80300F00F42 /* StoryboardNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C153ACE2A20E80300F00F42 /* StoryboardNavigator.swift */; };
+		7C153AD22A20E8E700F00F42 /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C153AD12A20E8E700F00F42 /* HomeViewPresenter.swift */; };
+		7C153AD52A20EA1A00F00F42 /* NewsDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C153AD42A20EA1A00F00F42 /* NewsDetailsPresenter.swift */; };
 		7C4ADDA729E77FFA00DF3F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4ADDA629E77FFA00DF3F23 /* AppDelegate.swift */; };
 		7C4ADDA929E77FFA00DF3F23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4ADDA829E77FFA00DF3F23 /* SceneDelegate.swift */; };
 		7C4ADDAE29E77FFA00DF3F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C4ADDAC29E77FFA00DF3F23 /* Main.storyboard */; };
@@ -35,6 +40,11 @@
 		7C153AB72A20E0AC00F00F42 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7C153ABC2A20E55400F00F42 /* BBCNewsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBCNewsEndpoint.swift; sourceTree = "<group>"; };
 		7C153ABE2A20E68800F00F42 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		7C153ACA2A20E7F400F00F42 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		7C153ACC2A20E7FA00F00F42 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		7C153ACE2A20E80300F00F42 /* StoryboardNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardNavigator.swift; sourceTree = "<group>"; };
+		7C153AD12A20E8E700F00F42 /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
+		7C153AD42A20EA1A00F00F42 /* NewsDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsPresenter.swift; sourceTree = "<group>"; };
 		7C4ADDA329E77FFA00DF3F23 /* Clean-MVP-News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean-MVP-News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C4ADDA629E77FFA00DF3F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C4ADDA829E77FFA00DF3F23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +75,9 @@
 		7C153AAB2A20DDFE00F00F42 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				7C153ACA2A20E7F400F00F42 /* NavigationRouter.swift */,
+				7C153ACC2A20E7FA00F00F42 /* RouterProtocol.swift */,
+				7C153ACE2A20E80300F00F42 /* StoryboardNavigator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -118,6 +131,22 @@
 				7C153ABC2A20E55400F00F42 /* BBCNewsEndpoint.swift */,
 			);
 			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		7C153AD02A20E8D900F00F42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C4ADDC329E780B400DF3F23 /* HomeViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7C153AD32A20EA0B00F00F42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C4ADDC529E780CD00DF3F23 /* NewsDetailsViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7C4ADD9A29E77FFA00DF3F23 = {
@@ -185,7 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				7C4ADDAC29E77FFA00DF3F23 /* Main.storyboard */,
-				7C4ADDC329E780B400DF3F23 /* HomeViewController.swift */,
+				7C153AD02A20E8D900F00F42 /* Views */,
+				7C153AD12A20E8E700F00F42 /* HomeViewPresenter.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -193,8 +223,9 @@
 		7C4ADDC229E7809000DF3F23 /* NewsDetails */ = {
 			isa = PBXGroup;
 			children = (
-				7C4ADDC529E780CD00DF3F23 /* NewsDetailsViewController.swift */,
 				7C4ADDC629E780CD00DF3F23 /* NewsDetailsViewController.xib */,
+				7C153AD32A20EA0B00F00F42 /* Views */,
+				7C153AD42A20EA1A00F00F42 /* NewsDetailsPresenter.swift */,
 			);
 			path = NewsDetails;
 			sourceTree = "<group>";
@@ -349,9 +380,14 @@
 				7C4ADDA729E77FFA00DF3F23 /* AppDelegate.swift in Sources */,
 				7C4ADDBD29E7805800DF3F23 /* AppStrings.swift in Sources */,
 				7C153AB52A20E09F00F00F42 /* AlamofireNetworkManager.swift in Sources */,
+				7C153ACD2A20E7FA00F00F42 /* RouterProtocol.swift in Sources */,
+				7C153AD52A20EA1A00F00F42 /* NewsDetailsPresenter.swift in Sources */,
 				7C153ABD2A20E55400F00F42 /* BBCNewsEndpoint.swift in Sources */,
 				7C4ADDA929E77FFA00DF3F23 /* SceneDelegate.swift in Sources */,
+				7C153ACF2A20E80300F00F42 /* StoryboardNavigator.swift in Sources */,
+				7C153ACB2A20E7F400F00F42 /* NavigationRouter.swift in Sources */,
 				7C153ABF2A20E68800F00F42 /* NetworkService.swift in Sources */,
+				7C153AD22A20E8E700F00F42 /* HomeViewPresenter.swift in Sources */,
 				7C4ADDBF29E7806100DF3F23 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

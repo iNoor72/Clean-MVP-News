@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+enum AppConstants {
+    static let baseURL = "https://saurav.tech/NewsAPI"
+}

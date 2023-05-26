@@ -9,6 +9,7 @@ import UIKit
 
 protocol HomeViewControllerProtocol: AnyObject {
     func reloadTableView()
+    func showError()
 }
 
 class HomeViewController: UIViewController, HomeViewControllerProtocol {
@@ -22,6 +23,7 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
         title = "News"
         presenter = HomeViewPresenter(homeView: self, router: NavigationRouter())
         setupTableView()
+        presenter.getNewsBasedOnUserPreference()
     }
     
     private func setupTableView() {
@@ -34,14 +36,19 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
             self.newsTableView.reloadData()
         }
     }
+    
+    func showError() {
+        
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return presenter.getNewsCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let article = presenter.getNews(at: indexPath.row) else { return UITableViewCell() }
         return UITableViewCell()
     }
 }

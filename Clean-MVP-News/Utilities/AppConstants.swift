@@ -17,4 +17,8 @@ enum AppConstants {
     enum TableViewCellsIdentifiers {
         
     }
+    
+    enum UserDefaultsKeys {
+        static let newsPreferenceKey = "newsTypePreference"
+    }
 }

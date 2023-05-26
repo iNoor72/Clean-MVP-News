@@ -102,8 +102,8 @@
 		7C153AB22A20E09400F00F42 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7C153AB92A20E11700F00F42 /* Endpoints */,
 				7C153AB62A20E0A300F00F42 /* Protocols */,
+				7C153AB92A20E11700F00F42 /* Endpoints */,
 				7C153AB42A20E09F00F00F42 /* AlamofireNetworkManager.swift */,
 			);
 			path = Network;

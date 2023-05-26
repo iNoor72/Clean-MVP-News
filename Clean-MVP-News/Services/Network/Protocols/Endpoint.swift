@@ -9,24 +9,16 @@ import Foundation
 import Alamofire
 
 protocol Endpoint: URLRequestConvertible {
-    
     var baseURL: URL { get }
-    
     var requestURL: URL { get }
-    
     var path: String { get }
-    
     var headers: HTTPHeaders { get }
-
     var parameters: Parameters? { get }
-    
     var method: HTTPMethod { get }
-    
     var encoding: ParameterEncoding { get }
 }
 
 extension Endpoint {
-    
     var baseURL: URL {
         guard let url = URL(string: AppConstants.baseURL) else { fatalError("Base URL isn't valid.") }
         return url

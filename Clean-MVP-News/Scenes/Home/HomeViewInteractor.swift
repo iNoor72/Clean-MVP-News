@@ -9,11 +9,11 @@ import Foundation
 
 class HomeViewInteractor {
     private let network: NetworkServiceProtocol
-    private let database: DatabaseProtocol
+//    private let database: DatabaseProtocol
     
-    init(network: NetworkServiceProtocol = AlamofireNetworkManager(), database: DatabaseProtocol? = nil) {
+    init(network: NetworkServiceProtocol = AlamofireNetworkManager()) {
         self.network = network
-        self.database = database!
+//        self.database = database!
     }
     
     func fetchNewsFromNetwork(for type: NewsTypes, onFetch: @escaping ((Result<NewsResponse, Error>)) -> Void) {

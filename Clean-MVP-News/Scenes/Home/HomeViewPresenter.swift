@@ -36,7 +36,7 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     }
     
     func getNewsBasedOnUserPreference() {
-        guard let userPreference = UserDefaults.standard.string(forKey: AppConstants.UserDefaultsKeys.newsPreferenceKey) else { homeView?.showError(); return }
+        let userPreference = UserDefaults.standard.string(forKey: AppConstants.UserDefaultsKeys.newsPreferenceKey) ?? NewsTypes.allNews.rawValue
         let preference = NewsTypes(rawValue: userPreference) ?? .allNews
         getNews(for: preference)
     }

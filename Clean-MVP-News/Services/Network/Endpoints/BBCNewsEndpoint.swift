@@ -31,9 +31,9 @@ extension BBCNewsEndpoint: Endpoint {
         case .allArticles:
             return "/everything/bbc-news.json"
         case .health:
-            return "https://saurav.tech/NewsAPI/top-headlines/category/health/gb.json"
+            return "/top-headlines/category/health/gb.json"
         case .science:
-            return "https://saurav.tech/NewsAPI/top-headlines/category/science/gb.json"
+            return "/top-headlines/category/science/gb.json"
         }
     }
 }

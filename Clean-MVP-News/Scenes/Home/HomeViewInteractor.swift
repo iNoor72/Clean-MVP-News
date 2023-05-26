@@ -16,7 +16,7 @@ class HomeViewInteractor {
 //        self.database = database!
     }
     
-    func fetchNewsFromNetwork(for type: NewsTypes, onFetch: @escaping ((Result<NewsResponse, Error>)) -> Void) {
+    func fetchNewsFromNetwork(for type: NewsType, onFetch: @escaping ((Result<NewsResponse, Error>)) -> Void) {
         var endpoint: BBCNewsEndpoint = BBCNewsEndpoint.allArticles
         switch type {
         case .allNews:
@@ -40,6 +40,6 @@ class HomeViewInteractor {
         }
     }
     
-    func fetchNewsFromDatabase(for type: NewsTypes, onFetch: @escaping ((Result<NewsResponse, Error>)) -> Void) {
+    func fetchNewsFromDatabase(for type: NewsType, onFetch: @escaping ((Result<NewsResponse, Error>)) -> Void) {
     }
 }

@@ -14,6 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if UserDefaults.standard.value(forKey: AppConstants.UserDefaultsKeys.newsPreferenceKey) == nil {
+            UserDefaults.standard.set(NewsType.allNews.rawValue, forKey: AppConstants.UserDefaultsKeys.newsPreferenceKey)
+        }
         return true
     }
 

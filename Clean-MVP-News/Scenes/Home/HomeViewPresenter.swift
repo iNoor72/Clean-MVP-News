@@ -12,6 +12,7 @@ protocol HomeViewPresenterProtocol {
     func navigateToArticle(at index: Int)
     func getNewsCount() -> Int
     func getNews(at index: Int) -> Article?
+    func getNewsType() -> NewsType
 }
 
 class HomeViewPresenter: HomeViewPresenterProtocol {
@@ -36,12 +37,17 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     }
     
     func getNewsBasedOnUserPreference() {
-        let userPreference = UserDefaults.standard.string(forKey: AppConstants.UserDefaultsKeys.newsPreferenceKey) ?? NewsTypes.allNews.rawValue
-        let preference = NewsTypes(rawValue: userPreference) ?? .allNews
+        let preference = getNewsType()
         getNews(for: preference)
     }
     
-    private func getNews(for type: NewsTypes) {
+    func getNewsType() -> NewsType {
+        let userPreference = UserDefaults.standard.string(forKey: AppConstants.UserDefaultsKeys.newsPreferenceKey) ?? NewsType.allNews.rawValue
+        let preference = NewsType(rawValue: userPreference) ?? .allNews
+        return preference
+    }
+    
+    private func getNews(for type: NewsType) {
         interactor.fetchNewsFromNetwork(for: type) {[weak self] response in
             guard let self = self else { return }
             

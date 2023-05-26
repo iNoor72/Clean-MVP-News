@@ -15,9 +15,11 @@ protocol HomeViewPresenterProtocol {
 
 class HomeViewPresenter: HomeViewPresenterProtocol {
     weak var homeView: HomeViewControllerProtocol?
+    private let router: NavigationRouter!
     
-    init(homeView: HomeViewControllerProtocol?) {
+    init(homeView: HomeViewControllerProtocol?, router: NavigationRouter) {
         self.homeView = homeView
+        self.router = router
     }
     
     func getNews() {

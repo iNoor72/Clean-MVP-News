@@ -14,6 +14,9 @@ protocol HomeViewControllerProtocol: AnyObject {
 class HomeViewController: UIViewController, HomeViewControllerProtocol {
 
     @IBOutlet private weak var newsTableView: UITableView!
+    
+    var presenter: HomeViewPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()

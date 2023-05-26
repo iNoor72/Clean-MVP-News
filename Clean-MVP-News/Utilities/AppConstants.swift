@@ -9,4 +9,12 @@ import Foundation
 
 enum AppConstants {
     static let baseURL = "https://saurav.tech/NewsAPI"
+    
+    enum ViewControllers {
+        static let homeViewControllerID = "HomeViewController"
+    }
+    
+    enum TableViewCellsIdentifiers {
+        
+    }
 }

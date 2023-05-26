@@ -7,6 +7,5 @@ target 'Clean-MVP-News' do
 
   # Pods for Clean-MVP-News
 pod 'Alamofire'
-pod 'Kingfisher', '~> 7.0'
 
 end

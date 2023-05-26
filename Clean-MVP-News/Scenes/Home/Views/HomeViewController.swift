@@ -15,10 +15,11 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
 
     @IBOutlet private weak var newsTableView: UITableView!
     
-    var presenter: HomeViewPresenterProtocol?
+    var presenter: HomeViewPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = HomeViewPresenter(homeView: self, router: NavigationRouter())
         setupTableView()
     }
     

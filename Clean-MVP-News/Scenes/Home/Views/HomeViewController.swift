@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeViewControllerProtocol: AnyObject {
-    
+    func reloadTableView()
 }
 
 class HomeViewController: UIViewController, HomeViewControllerProtocol {
@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "News"
         presenter = HomeViewPresenter(homeView: self, router: NavigationRouter())
         setupTableView()
     }
@@ -26,6 +27,12 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     private func setupTableView() {
         newsTableView.delegate = self
         newsTableView.dataSource = self
+    }
+    
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.newsTableView.reloadData()
+        }
     }
 }
 

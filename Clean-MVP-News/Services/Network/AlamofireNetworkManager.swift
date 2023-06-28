@@ -22,4 +22,8 @@ final class AlamofireNetworkManager: NetworkServiceProtocol {
             }
         }
     }
+    
+    static func fetchImage(with URL: URL) -> Data? {
+        return try? Data(contentsOf: URL)
+    }
 }

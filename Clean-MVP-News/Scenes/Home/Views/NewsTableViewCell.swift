@@ -26,11 +26,11 @@ class NewsTableViewCell: UITableViewCell {
         if let imageURL = newsData.imageURL {
             let url = URL(string: imageURL)!
             DispatchQueue.global().async {
-                guard let data = try? Data(contentsOf: url) else { return }
+                guard let data = AlamofireNetworkManager.fetchImage(with: url) else { return }
                 
                 DispatchQueue.main.async {
                     self.newsImage.image = UIImage(data: data)
-                }
+                }   
             }
         }   
     }

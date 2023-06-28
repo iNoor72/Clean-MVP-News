@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UIKit
+import UIKit.UIViewController
 
 protocol HomeViewPresenterProtocol {
     func getNewsBasedOnUserPreference()
@@ -68,7 +68,7 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     func navigateToArticle(at index: Int) {
         guard let article = newsArticles?[index] else { return }
         let detailsViewController = NewsDetailsViewController()
-        detailsViewController.presenter = NewsDetailsPresenter(newsDetailsView: detailsViewController, router: self.router, article: article)
+        detailsViewController.presenter = NewsDetailsPresenter(newsDetailsView: detailsViewController, router: NavigationRouter(), article: article)
         router.push(detailsViewController)
     }
 }

@@ -17,14 +17,27 @@ class NewsDetailsViewController: UIViewController, NewsDetailsViewControllerProt
     @IBOutlet private weak var newsAuthorLabel: UILabel!
     @IBOutlet private weak var publishedAtLabel: UILabel!
     
-    var presenter: NewsDetailsPresenterProtocol?
+    var presenter: NewsDetailsPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        title = presenter?.getNewsTitle()
     }
     
     private func setupViews() {
-        
+        newsContentTextView.isEditable = false
+        newsContentTextView.isScrollEnabled = true
+        presenter.getNewsImage {[weak self] image in
+            DispatchQueue.main.async {
+                self?.newsImage.image = image
+            }
+        }
+        publishedAtLabel.text = presenter.getNewsPublishingTime()
+        newsContentTextView.text = presenter.getNewsContent()
+        let author = presenter.getNewsAuthor()
+        newsAuthorLabel.text = author != nil
+        ? "By: " + (author ?? "No author")
+        : "No author"
     }
 }

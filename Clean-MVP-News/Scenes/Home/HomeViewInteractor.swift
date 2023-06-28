@@ -41,5 +41,6 @@ class HomeViewInteractor {
     }
     
     func fetchNewsFromDatabase(for type: NewsType, onFetch: @escaping ((Result<NewsResponse, Error>)) -> Void) {
+        //Some logic to fetch data from the Database
     }
 }

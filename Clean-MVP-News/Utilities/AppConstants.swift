@@ -15,7 +15,7 @@ enum AppConstants {
     }
     
     enum TableViewCellsIdentifiers {
-        
+        static let NewsTableViewCellID = "NewsTableViewCell"
     }
     
     enum UserDefaultsKeys {

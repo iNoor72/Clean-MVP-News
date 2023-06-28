@@ -32,6 +32,9 @@
 		7C4ADDC429E780B400DF3F23 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4ADDC329E780B400DF3F23 /* HomeViewController.swift */; };
 		7C4ADDC729E780CD00DF3F23 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4ADDC529E780CD00DF3F23 /* NewsDetailsViewController.swift */; };
 		7C4ADDC829E780CD00DF3F23 /* NewsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C4ADDC629E780CD00DF3F23 /* NewsDetailsViewController.xib */; };
+		7CEF33402A4C656400D0C04D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEF333E2A4C656400D0C04D /* NewsTableViewCell.swift */; };
+		7CEF33412A4C656400D0C04D /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CEF333F2A4C656400D0C04D /* NewsTableViewCell.xib */; };
+		7CEF33432A4C666A00D0C04D /* NewsCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEF33422A4C666A00D0C04D /* NewsCellData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		7C4ADDC329E780B400DF3F23 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7C4ADDC529E780CD00DF3F23 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		7C4ADDC629E780CD00DF3F23 /* NewsDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailsViewController.xib; sourceTree = "<group>"; };
+		7CEF333E2A4C656400D0C04D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		7CEF333F2A4C656400D0C04D /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		7CEF33422A4C666A00D0C04D /* NewsCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellData.swift; sourceTree = "<group>"; };
 		8336927A89D0D16B2D0D29F4 /* Pods-Clean-MVP-News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clean-MVP-News.debug.xcconfig"; path = "Target Support Files/Pods-Clean-MVP-News/Pods-Clean-MVP-News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +149,8 @@
 		7C153AD02A20E8D900F00F42 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7CEF333E2A4C656400D0C04D /* NewsTableViewCell.swift */,
+				7CEF333F2A4C656400D0C04D /* NewsTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				7C153AD72A20F45B00F00F42 /* NewsType.swift */,
+				7CEF33422A4C666A00D0C04D /* NewsCellData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -345,6 +354,7 @@
 				7C4ADDB329E77FFC00DF3F23 /* LaunchScreen.storyboard in Resources */,
 				7C4ADDB029E77FFC00DF3F23 /* Assets.xcassets in Resources */,
 				7C4ADDAE29E77FFA00DF3F23 /* Main.storyboard in Resources */,
+				7CEF33412A4C656400D0C04D /* NewsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CEF33432A4C666A00D0C04D /* NewsCellData.swift in Sources */,
 				7C153AAF2A20DE7800F00F42 /* Article.swift in Sources */,
 				7C153AB12A20DF8F00F00F42 /* NewsResponse.swift in Sources */,
 				7C4ADDC729E780CD00DF3F23 /* NewsDetailsViewController.swift in Sources */,
@@ -405,6 +416,7 @@
 				7C153AB82A20E0AC00F00F42 /* Endpoint.swift in Sources */,
 				7C4ADDA729E77FFA00DF3F23 /* AppDelegate.swift in Sources */,
 				7C4ADDBD29E7805800DF3F23 /* AppStrings.swift in Sources */,
+				7CEF33402A4C656400D0C04D /* NewsTableViewCell.swift in Sources */,
 				7C153AB52A20E09F00F00F42 /* AlamofireNetworkManager.swift in Sources */,
 				7C153ACD2A20E7FA00F00F42 /* RouterProtocol.swift in Sources */,
 				7C153AD52A20EA1A00F00F42 /* NewsDetailsPresenter.swift in Sources */,

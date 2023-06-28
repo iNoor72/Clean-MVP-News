@@ -9,7 +9,7 @@ import UIKit
 
 protocol HomeViewControllerProtocol: AnyObject {
     func reloadTableView()
-    func showError()
+    func showError(error: NSError?)
 }
 
 class HomeViewController: UIViewController, HomeViewControllerProtocol {
@@ -29,6 +29,8 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     private func setupTableView() {
         newsTableView.delegate = self
         newsTableView.dataSource = self
+        newsTableView.register(UINib(nibName: AppConstants.TableViewCellsIdentifiers.NewsTableViewCellID, bundle: nil), forCellReuseIdentifier: AppConstants.TableViewCellsIdentifiers.NewsTableViewCellID)
+        newsTableView.rowHeight = 107
     }
     
     private func setupView() {
@@ -73,8 +75,10 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
         }
     }
     
-    func showError() {
-        
+    func showError(error: NSError?) {
+        let alert = UIAlertController(title: "Error", message: error?.localizedFailureReason ?? "Failed to get data.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -84,7 +88,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AppConstants.TableViewCellsIdentifiers.NewsTableViewCellID, for: indexPath) as? NewsTableViewCell else { return UITableViewCell() }
         guard let article = presenter.getNews(at: indexPath.row) else { return UITableViewCell() }
-        return UITableViewCell()
+        
+        let newsData = NewsCellData(title: article.title, author: article.author, imageURL: article.urlToImage)
+        cell.setupCell(with: newsData)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.navigateToArticle(at: indexPath.row)
     }
 }

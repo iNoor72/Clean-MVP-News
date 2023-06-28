@@ -13,8 +13,12 @@ protocol NewsDetailsPresenterProtocol {
 
 class NewsDetailsPresenter: NewsDetailsPresenterProtocol {
     weak var newsDetailsView: NewsDetailsViewControllerProtocol?
+    private let router: NavigationRouter!
+    var article: Article
     
-    init(newsDetailsView: NewsDetailsViewControllerProtocol?) {
+    init(newsDetailsView: NewsDetailsViewControllerProtocol?, router: NavigationRouter, article: Article) {
         self.newsDetailsView = newsDetailsView
+        self.router = router
+        self.article = article
     }
 }

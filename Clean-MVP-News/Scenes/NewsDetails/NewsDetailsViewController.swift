@@ -12,22 +12,19 @@ protocol NewsDetailsViewControllerProtocol: AnyObject {
 }
 
 class NewsDetailsViewController: UIViewController, NewsDetailsViewControllerProtocol {
-
+    @IBOutlet private weak var newsImage: UIImageView!
+    @IBOutlet private weak var newsContentTextView: UITextView!
+    @IBOutlet private weak var newsAuthorLabel: UILabel!
+    @IBOutlet private weak var publishedAtLabel: UILabel!
+    
+    var presenter: NewsDetailsPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupViews()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func setupViews() {
+        
     }
-    */
-
 }

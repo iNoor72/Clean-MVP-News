@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol HomeViewPresenterProtocol {
     func getNewsBasedOnUserPreference()
@@ -26,6 +27,7 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
         self.homeView = homeView
         self.router = router
         self.interactor = interactor
+        router.presentedView = homeView as? UIViewController
     }
     
     func getNewsCount() -> Int {
@@ -53,10 +55,10 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
             
             switch response {
             case .failure(let error):
-                self.homeView?.showError()
+                self.homeView?.showError(error: error as NSError)
                 
             case .success(let newsResponse):
-                guard let articles = newsResponse.articles, !articles.isEmpty else { homeView?.showError(); return }
+                guard let articles = newsResponse.articles, !articles.isEmpty else { homeView?.showError(error: nil); return }
                 self.newsArticles = articles
                 self.homeView?.reloadTableView()
             }
@@ -64,5 +66,9 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     }
     
     func navigateToArticle(at index: Int) {
+        guard let article = newsArticles?[index] else { return }
+        let detailsViewController = NewsDetailsViewController()
+        detailsViewController.presenter = NewsDetailsPresenter(newsDetailsView: detailsViewController, router: self.router, article: article)
+        router.push(detailsViewController)
     }
 }
